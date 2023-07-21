@@ -34,7 +34,7 @@ p, li, a{
 
 .heading {
     margin: 0 0 30px 0;
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .ingredientsContainer{
@@ -48,7 +48,7 @@ p, li, a{
 }
 
 .categoryTitle {
-    font-size: 18px;
+    font-size: 20px;
     margin: 0 ;
 }
 
@@ -58,7 +58,8 @@ ul{
 }
 
 li {
-    font-size: 15px;
+    font-size: 17px;
+    line-height: 1.75;
 }
 
 .instructionsContainer{
