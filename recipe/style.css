@@ -26,7 +26,15 @@ p, li {
     text-align: center;
 }
 
+.left {
+    float: left;
+}
 
+.right {
+    width: 600px;
+    float: left;
+    
+}
 
 .ingredients {
    display: grid;
