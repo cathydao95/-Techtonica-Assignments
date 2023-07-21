@@ -6,50 +6,57 @@ body {
 h1, h2, h3, h4, h5, h5 {
     font-family: Poppins;
     text-transform: uppercase;
+}
 
+
+.title {
+    text-align: center;
 }
 
 h1{
-    font-size: 36px;
-    text-align: center
+    font-size: 48px;
+    text-align: center;
 }
 
 p, li {
     font-family: Poppins;
 }
 
+.description {
+    margin: 50px 0;
+}
+
 .container {
-    display: flex;
+    display: flex;   
+    justify-content: space-between;
+    margin: 50px 0;
 }
 
-.title {
-    text-align: center;
+.heading {
+    margin: 0 0 30px 0;
+    font-size: 24px;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    width: 600px;
-    float: left;
-    
+.ingredientsContainer{
+    margin-left: 30px;
 }
 
 .ingredients {
-   display: grid;
-   grid-template: 200px 200px;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-gap: 10px;
 }
 
-.ingCategory {
-    width: 300px;
+.ingTitle {
+    font-size: 18px;
+    margin: 0 ;
 }
 
-ul {
+ul{
+    margin: 0;
     padding: 10px;
 }
+
 li {
     font-size: 12px;
-
 }
-
