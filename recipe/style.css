@@ -1,5 +1,6 @@
 body {
     background-color: #EFEDE8;
+    margin: 50px;
 }
 
 h1, h2, h3, h4, h5, h5 {
@@ -8,10 +9,39 @@ h1, h2, h3, h4, h5, h5 {
 
 }
 
+h1{
+    font-size: 36px;
+    text-align: center
+}
+
 p, li {
     font-family: Poppins;
 }
 
-.description {
-    width: 600px;
+.container {
+    display: flex;
 }
+
+.title {
+    text-align: center;
+}
+
+
+
+.ingredients {
+   display: grid;
+   grid-template: 200px 200px;
+}
+
+.ingCategory {
+    width: 300px;
+}
+
+ul {
+    padding: 10px;
+}
+li {
+    font-size: 12px;
+
+}
+
