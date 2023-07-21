@@ -18,7 +18,7 @@ h1{
     text-align: center;
 }
 
-p, li {
+p, li, a{
     font-family: Poppins;
 }
 
@@ -28,7 +28,7 @@ p, li {
 
 .container {
     display: flex;   
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 50px 0;
 }
 
@@ -43,11 +43,11 @@ p, li {
 
 .ingredients {
     display: grid;
-    grid-template-columns: 200px 200px;
-    grid-gap: 10px;
+    grid-template-columns: 275px 275px;
+    grid-gap: 25px;
 }
 
-.ingTitle {
+.categoryTitle {
     font-size: 18px;
     margin: 0 ;
 }
@@ -58,5 +58,28 @@ ul{
 }
 
 li {
-    font-size: 12px;
+    font-size: 15px;
+}
+
+.instructionsContainer{
+    margin-bottom: 50px;
+}
+
+.instructionsTitle{
+    text-align: center;
+}
+
+.smallHeading {
+    margin:0;
+    color: rgb(80, 138, 80)
+}
+
+.externalLinks{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(116, 115, 112);
+
 }
