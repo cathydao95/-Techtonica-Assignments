@@ -1,5 +1,5 @@
 body {
-    background-color: antiquewhite;
+    background-color: #EFEDE8;
 }
 
 h1, h2, h3, h4, h5, h5 {
@@ -10,4 +10,8 @@ h1, h2, h3, h4, h5, h5 {
 
 p, li {
     font-family: Poppins;
+}
+
+.description {
+    width: 600px;
 }
