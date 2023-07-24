@@ -1,0 +1,86 @@
+body {
+    background-color: #EFEDE8;
+    margin: 50px;
+}
+
+h1, h2, h3, h4, h5, h5 {
+    font-family: Poppins;
+    text-transform: uppercase;
+}
+
+
+.title {
+    text-align: center;
+}
+
+h1{
+    font-size: 48px;
+    text-align: center;
+}
+
+p, li, a{
+    font-family: Poppins;
+}
+
+.description {
+    margin: 50px 0;
+}
+
+.container {
+    display: flex;   
+    justify-content: space-around;
+    margin: 50px 0;
+}
+
+.heading {
+    margin: 0 0 30px 0;
+    font-size: 32px;
+}
+
+.ingredientsContainer{
+    margin-left: 30px;
+}
+
+.ingredients {
+    display: grid;
+    grid-template-columns: 275px 275px;
+    grid-gap: 25px;
+}
+
+.categoryTitle {
+    font-size: 20px;
+    margin: 0 ;
+}
+
+ul{
+    margin: 0;
+    padding: 10px;
+}
+
+li {
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.instructionsContainer{
+    margin-bottom: 50px;
+}
+
+.instructionsTitle{
+    text-align: center;
+}
+
+.smallHeading {
+    margin:0;
+    color: rgb(80, 138, 80)
+}
+
+.externalLinks{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(116, 115, 112);
+
+}
