@@ -20,5 +20,11 @@ for (let i=0; i<listItems.length; i++){
 }
 
 // change pictures
+
+
 let mainImg = document.getElementsByTagName('img')
+
+
+
+mainImg.addEventListener('click', changeImg)
 
