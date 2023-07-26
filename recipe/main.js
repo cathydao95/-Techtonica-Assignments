@@ -20,13 +20,24 @@ for (let i=0; i<listItems.length; i++){
 }
 
 // change pictures
+// create index to go through each index in img array
+let i=0;
+
+let imgSrc = [
+ "https://www.marionskitchen.com/wp-content/uploads/2019/08/Crispy-Vietnamese-Pancakes4.jpg", "https://www.cooking-therapy.com/wp-content/uploads/2020/05/Banh-Xeo-8-scaled.jpg", "https://takestwoeggs.com/wp-content/uploads/2022/04/Ba%CC%81nh-Xe%CC%80o-Vietnamese-Cre%CC%82pes-Takestwoeggs-Final-Photogrphy-sq.jpg"
+]
 
 
-let mainImg = document.getElementsByTagName('img')
+let mainImg = document.getElementsByClassName('mainImg')
 
 function changeImg(){
-  
+  if (i === imgSrc.length -1 ){
+    i = 0
+  } else {
+    i++
+  }
+  mainImg[0].src = imgSrc[i]
 }
 
-mainImg.addEventListener('click', changeImg)
+mainImg[0].addEventListener('click', changeImg)
 
