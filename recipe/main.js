@@ -4,7 +4,11 @@ console.log(listItems)
 
 // check if text-decoration is line-through
 function toggleItem(){
- 
+  if (this.style.textDecoration === "line-through"){
+    this.style.textDecoration = "none"
+  } else {
+    this.style.textDecoration = "line-through"
+  }
 }
 
 
