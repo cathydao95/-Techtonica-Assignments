@@ -6,8 +6,10 @@ console.log(listItems)
 function toggleItem(){
   if (this.style.textDecoration === "line-through"){
     this.style.textDecoration = "none"
+    this.style.color = "black"
   } else {
     this.style.textDecoration = "line-through"
+    this.style.color = "grey"
   }
 }
 
