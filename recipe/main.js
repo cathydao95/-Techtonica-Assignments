@@ -2,6 +2,10 @@
 let listItems = document.getElementsByTagName('li')
 console.log(listItems)
 
+// check if text-decoration is line-through
+function toggleItem(){
+ 
+}
 
 
 // loop through each element in HTMLCollection and add event listener to each element and run function toggleItem when clicked
