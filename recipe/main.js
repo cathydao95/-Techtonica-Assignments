@@ -24,7 +24,9 @@ for (let i=0; i<listItems.length; i++){
 
 let mainImg = document.getElementsByTagName('img')
 
-
+function changeImg(){
+  
+}
 
 mainImg.addEventListener('click', changeImg)
 
