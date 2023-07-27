@@ -51,12 +51,10 @@ let btn = document.getElementsByClassName('btn')
 
 function showRecs(){
   if (articleSection[0].style.display === "none"){
-    console.log('1 going')
     btn[0].style.backgroundColor = "grey";
     btn[0].innerText = "Hide Recommendations";
     articleSection[0].style.display = "block";
   } else {
-    console.log('2 going')
     btn[0].style.backgroundColor = "rgb(118, 154, 118)";
     articleSection[0].style.display = "none";
     btn[0].innerText = "Finished Cooking! Show me more recommendations!";
