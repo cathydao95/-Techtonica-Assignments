@@ -1,8 +1,7 @@
-// Cross of list item when checked
+// DOM MANIPULATION 1: Cross of list item when checked
 let listItems = document.getElementsByTagName('li')
-console.log(listItems)
 
-// check if text-decoration is line-through
+// check if item is crossed off 
 function toggleItem(){
   if (this.style.textDecoration === "line-through"){
     this.style.textDecoration = "none"
@@ -13,14 +12,13 @@ function toggleItem(){
   }
 }
 
-
 // loop through each element in HTMLCollection and add event listener to each element and run function toggleItem when clicked
 for (let i=0; i<listItems.length; i++){
   listItems[i].addEventListener('click', toggleItem)
 }
 
-// change pictures
-// create index to go through each index in img array
+// DOM MANIPULATION 2: Change pictures
+// Create index to go through each index in img array
 let i=0;
 
 let imgSrc = [
@@ -37,7 +35,32 @@ function changeImg(){
     i++
   }
   mainImg[0].src = imgSrc[i]
+  mainImg.style.object
 }
 
 mainImg[0].addEventListener('click', changeImg)
 
+// when click button, show list of recommendations by changing the default css of none to block;
+
+let btn = document.getElementsByClassName('btn')
+
+ let articleSection =
+  document.getElementsByTagName('article');
+
+  articleSection[0].style.display = "none";
+
+function showRecs(){
+  if (articleSection[0].style.display === "none"){
+    console.log('1 going')
+    btn[0].style.backgroundColor = "grey";
+    btn[0].innerText = "Hide Recommendations";
+    articleSection[0].style.display = "block";
+  } else {
+    console.log('2 going')
+    btn[0].style.backgroundColor = "rgb(118, 154, 118)";
+    articleSection[0].style.display = "none";
+    btn[0].innerText = "Finished Cooking! Show me more recommendations!";
+  }
+}
+
+btn[0].addEventListener('click', showRecs )

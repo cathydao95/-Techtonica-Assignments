@@ -3,7 +3,7 @@ body {
     margin: 50px;
 }
 
-h1, h2, h3, h4, h5, h5 {
+h1, h2, h3, h4, h5, h5, .btn {
     font-family: Poppins;
     text-transform: uppercase;
 }
@@ -45,6 +45,20 @@ a {
     width: 100%;
 }
 
+.btnContainer{
+    margin: 50px 0;
+    text-align: center;
+}
+.btn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(118, 154, 118);
+}
+
+article{
+display: none;
+text-align: center;
+}
 
 @media (min-width: 769px) {
     h1 {
