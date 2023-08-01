@@ -32,6 +32,11 @@ a {
 }
 /* about */
 .about {
+  margin-top: 25px;
+}
+
+.attribute {
+  font-size: 8px;
 }
 /* projects */
 
@@ -55,4 +60,41 @@ form {
 
 textarea {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 600px) {
+  body {
+    margin: 0 4rem;
+  }
+  .projContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  body {
+    margin: 0 10rem;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .title {
+    flex-basis: 40%;
+  }
+
+  .bio {
+    flex-basis: 50%;
+  }
+
+  .projContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
 }
