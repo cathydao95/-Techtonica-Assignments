@@ -4,16 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cathy's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>Nav Bar</nav>
+    <nav class="nav">
+      <ul>
+        <li class="logo"><a href="">Cathy</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
     <main class="about">
       <h1>Hi, I'm Cathy</h1>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-        aliquid tempore id perferendis laboriosam quaerat consectetur molestias
-        laborum fugit assumenda beatae, voluptates quasi? Consequuntur et rerum
-        natus similique qui sapiente!
+        I am a software engineer based in Los Angeles, California. Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Reiciendis, tempore! Odit
+        facilis error sunt eaque. Modi veniam saepe nam adipisci magni quis, et
+        tenetur perferendis veritatis, optio quo alias sapiente.
       </p>
     </main>
     <section class="projects">
@@ -22,7 +30,12 @@
     </section>
     <section class="contact">
       <h2>Contact Me</h2>
-      <form></form>
+      <form>
+        <input type="text" value="Name" name="name" id="name" />
+        <input type="text" value="Email" name="email" id="email" />
+        <input type="text" value="Phone Number" name="number" id="number" />
+        <textarea id="message" name="message" rows="5" cols="40"></textarea>
+      </form>
     </section>
   </body>
 </html>
