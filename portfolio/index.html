@@ -15,7 +15,7 @@
         <li><a href="">Contact</a></li>
       </ul>
     </nav>
-    <main class="about">
+    <main class="about section">
       <h1>Hi, I'm Cathy</h1>
       <p>
         I am a software engineer based in Los Angeles, California. Lorem, ipsum
@@ -24,18 +24,38 @@
         tenetur perferendis veritatis, optio quo alias sapiente.
       </p>
     </main>
-    <section class="projects">
+    <section class="projects section">
       <h2>Projects</h2>
-      <div>List of projects</div>
+      <div class="projContainer">
+        <div class="projectItem">
+          <img
+            src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmVjaXBlfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+          />
+        </div>
+        <div class="projectItem">
+          <img
+            src="https://images.unsplash.com/photo-1477554193778-9562c28588c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGxhbnRzfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+          />
+        </div>
+        <div class="projectItem">
+          <img
+            src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+          />
+        </div>
+      </div>
     </section>
-    <section class="contact">
+    <section class="contact section">
       <h2>Contact Me</h2>
       <form>
         <input type="text" value="Name" name="name" id="name" />
         <input type="text" value="Email" name="email" id="email" />
         <input type="text" value="Phone Number" name="number" id="number" />
-        <textarea id="message" name="message" rows="5" cols="40"></textarea>
+        <textarea id="message" name="message" rows="5" cols="40">
+Enter Message</textarea
+        >
+        <button type="submit">Submit</button>
       </form>
     </section>
+    <footer class="footern">Copyright Cathy Dao</footer>
   </body>
 </html>
