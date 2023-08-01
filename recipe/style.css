@@ -1,86 +1,131 @@
 body {
-    background-color: #EFEDE8;
-    margin: 50px;
+  background-color: #efede8;
+  margin: 50px;
 }
 
-h1, h2, h3, h4, h5, h5 {
-    font-family: Poppins;
-    text-transform: uppercase;
+h1,
+h2,
+h3,
+h4,
+h5,
+h5,
+.btn {
+  font-family: Poppins;
+  text-transform: uppercase;
 }
 
+p,
+li,
+a {
+  font-family: Poppins;
+}
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
-h1{
-    font-size: 48px;
-    text-align: center;
+h1 {
+  font-size: 32px;
 }
 
-p, li, a{
-    font-family: Poppins;
-}
-
-.description {
-    margin: 50px 0;
-}
-
-.container {
-    display: flex;   
-    justify-content: space-around;
-    margin: 50px 0;
-}
-
-.heading {
-    margin: 0 0 30px 0;
-    font-size: 32px;
-}
-
-.ingredientsContainer{
-    margin-left: 30px;
-}
-
-.ingredients {
-    display: grid;
-    grid-template-columns: 275px 275px;
-    grid-gap: 25px;
-}
-
-.categoryTitle {
-    font-size: 20px;
-    margin: 0 ;
-}
-
-ul{
-    margin: 0;
-    padding: 10px;
-}
-
-li {
-    font-size: 17px;
-    line-height: 1.75;
-}
-
-.instructionsContainer{
-    margin-bottom: 50px;
-}
-
-.instructionsTitle{
-    text-align: center;
+.instructionsTitle {
+  text-align: center;
 }
 
 .smallHeading {
-    margin:0;
-    color: rgb(80, 138, 80)
+  margin: 0;
+  color: rgb(80, 138, 80);
 }
 
-.externalLinks{
-    list-style: none;
+.externalLinks {
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(116, 115, 112);
+  text-decoration: none;
+  color: rgb(116, 115, 112);
+}
 
+.mainImg {
+  width: 100%;
+}
+
+.btnContainer {
+  margin: 50px 0;
+  text-align: center;
+}
+.btn {
+  padding: 10px;
+  font-size: 16px;
+  background-color: rgb(118, 154, 118);
+}
+
+article {
+  text-align: center;
+}
+
+@media (min-width: 769px) {
+  h1 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .description {
+    margin: 50px 0;
+  }
+
+  .heading {
+    margin: 0 0 30px 0;
+    font-size: 32px;
+  }
+
+  .ingredientsContainer {
+    margin-left: 30px;
+  }
+
+  .ingredients {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    justify-content: space-evenly;
+  }
+
+  .categoryTitle {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 10px;
+  }
+
+  li {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .instructionsContainer {
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+  }
+
+  .imgContainer {
+    width: 500px;
+  }
+
+  .mainImg {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ingredients {
+    grid-template-columns: 275px 275px;
+  }
 }
