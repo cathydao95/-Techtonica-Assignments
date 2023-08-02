@@ -30,9 +30,50 @@ a {
   padding: 10px 0;
   text-align: center;
 }
+
+/* main */
+
+.main {
+  padding: 4rem 0;
+}
+
+.attribute {
+  text-align: right;
+}
+.btnContainer {
+  position: absolute;
+  /* left: -75px;
+  top: -55px; */
+  top: 335px;
+  left: 20px;
+}
+
+.aboutBtn {
+  background-color: rgb(194, 194, 194);
+  color: white;
+  padding: 0.65rem 1rem;
+  border: none;
+}
+
+.aboutBtn:hover {
+  background-color: black;
+}
+
+.downArrow {
+  position: absolute;
+  top: 360px;
+  left: 88px;
+  /* left: -75px;
+  top: -65px; */
+  font-size: 1rem;
+}
+
+.aboutBig {
+  display: none;
+}
 /* about */
-.about {
-  margin-top: 25px;
+.aboutSmall {
+  text-align: center;
 }
 
 .attribute {
@@ -41,6 +82,7 @@ a {
 /* projects */
 
 .projectItem {
+  position: relative;
   height: 200px;
   overflow: hidden;
   margin: 25px 0;
@@ -49,6 +91,18 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 1;
+}
+
+.projectText {
+  display: none;
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
 
 /* form */
@@ -66,6 +120,18 @@ textarea {
   body {
     margin: 0 4rem;
   }
+
+  .main {
+    display: flex;
+  }
+
+  .aboutBig {
+    display: block;
+  }
+  .aboutSmall {
+    display: none;
+  }
+
   .projContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -76,20 +142,6 @@ textarea {
 @media (min-width: 900px) {
   body {
     margin: 0 10rem;
-  }
-
-  .about {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-  }
-
-  .title {
-    flex-basis: 40%;
-  }
-
-  .bio {
-    flex-basis: 50%;
   }
 
   .projContainer {
