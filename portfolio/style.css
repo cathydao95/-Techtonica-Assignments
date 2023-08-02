@@ -212,3 +212,16 @@ footer {
     grid-gap: 20px;
   }
 }
+
+@media (min-width: 1100px) {
+  .main {
+    justify-content: space-around;
+  }
+  .mainPicContainer {
+    flex-basis: 50%;
+  }
+
+  .aboutBig {
+    flex-basis: 50%;
+  }
+}
