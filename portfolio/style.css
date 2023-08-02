@@ -95,7 +95,6 @@ a {
 }
 
 .projectText {
-  display: none;
   color: black;
   position: absolute;
   top: 0;
@@ -103,6 +102,10 @@ a {
   width: 100%;
   height: 100%;
   text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* form */

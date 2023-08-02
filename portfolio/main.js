@@ -29,7 +29,7 @@ console.log(projectItems);
 function displayProjectInfo() {
   console.log("test");
   this.querySelector(".projectImage").style.opacity = ".25";
-  this.querySelector(".projectText").style.display = "block";
+  this.querySelector(".projectText").style.display = "flex";
 }
 
 function hideProjectInfo() {
