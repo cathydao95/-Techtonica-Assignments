@@ -107,6 +107,7 @@ button {
   height: 200px;
   overflow: hidden;
   margin: 25px 0;
+  background-color: white;
 }
 .projectItem img {
   width: 100%;
