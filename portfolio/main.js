@@ -10,6 +10,21 @@ let imgSrcs = [
 ];
 
 let currentPictureIndex = 0;
+let projectItems = document.getElementsByClassName("projectItem");
+
+let projectImages = document.getElementsByClassName("projectImage");
+
+let submitMsgBtn = document.getElementById("submitBtn");
+
+let form = document.getElementsByTagName("form");
+
+let confirmation = document.getElementsByClassName("msgConfirmation");
+
+let darkModeOn = false;
+let navBar = document.querySelector(".nav");
+let modeBtn = document.querySelector("#modeBtn");
+let contact = document.querySelector("#contact");
+let footer = document.querySelector(".footer");
 
 function changePicture() {
   currentPictureIndex = (currentPictureIndex + 1) % imgSrcs.length;
@@ -19,12 +34,6 @@ function changePicture() {
 mainPicture.addEventListener("click", changePicture);
 
 // add mouseover effect
-
-let projectItems = document.getElementsByClassName("projectItem");
-
-let projectImages = document.getElementsByClassName("projectImage");
-
-console.log(projectItems);
 
 function displayProjectInfo(e) {
   let hoveredElement = e.currentTarget;
@@ -44,19 +53,17 @@ for (item of projectItems) {
 }
 
 // submit button click
-let submitMsgBtn = document.getElementById("submitBtn");
-
-let form = document.getElementsByTagName("form");
-
-let confirmation = document.getElementsByClassName("msgConfirmation");
-
 function changeBtnColor() {
   submitMsgBtn.style.backgroundColor = "grey";
   submitMsgBtn.style.color = "white";
 }
 
 function revertBtnColor() {
-  submitMsgBtn.style.backgroundColor = "rgb(151, 197, 237)";
+  if (darkModeOn) {
+    submitMsgBtn.style.backgroundColor = "#394867";
+  } else {
+    submitMsgBtn.style.backgroundColor = "rgb(151, 197, 237)";
+  }
 }
 function sendMessage(e) {
   e.preventDefault();
@@ -67,3 +74,33 @@ function sendMessage(e) {
 submitMsgBtn.addEventListener("mouseover", changeBtnColor);
 submitMsgBtn.addEventListener("mouseleave", revertBtnColor);
 submitMsgBtn.addEventListener("click", sendMessage);
+
+// dark mode
+
+function setDisplayMode() {
+  if (darkModeOn) {
+    document.body.style.backgroundColor = "rgb(241, 250, 252)";
+    document.body.style.color = "black";
+    navBar.style.backgroundColor = "rgb(18, 113, 197)";
+    contact.style.backgroundColor = "rgb(239, 239, 239)";
+    submitMsgBtn.style.backgroundColor = "rgb(151, 197, 237)";
+    footer.style.backgroundColor = "rgb(18, 113, 197)";
+    modeBtn.style.color = "white";
+    modeBtn.style.backgroundColor = "rgb(151, 197, 237)";
+    darkModeOn = false;
+  } else {
+    document.body.style.backgroundColor = "#414141";
+    document.body.style.color = "white";
+    navBar.style.backgroundColor = "#525252";
+    contact.style.backgroundColor = "#313131";
+    submitMsgBtn.style.backgroundColor = "#394867";
+    footer.style.backgroundColor = "#525252";
+    modeBtn.style.color = "white";
+    modeBtn.style.backgroundColor = "#394867";
+    darkModeOn = true;
+  }
+}
+
+modeBtn.addEventListener("click", setDisplayMode);
+
+console.log(modeBtn);

@@ -26,6 +26,17 @@ li {
   list-style: none;
 }
 
+.section {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(151, 197, 237);
+}
+
+/* nav */
+
 .logo {
   flex-basis: 40%;
 }
@@ -43,13 +54,9 @@ li {
   color: rgb(39, 38, 38);
 }
 
-.section {
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
-button {
-  background-color: rgb(151, 197, 237);
+#modeBtn {
+  border: 2px solid black;
+  padding: 0.2rem 0.75rem;
 }
 
 /* main */
@@ -234,6 +241,10 @@ footer {
 
   .navLink {
     font-size: 1.25rem;
+  }
+
+  #modeBtn {
+    font-size: 1.05rem;
   }
 
   .main {
