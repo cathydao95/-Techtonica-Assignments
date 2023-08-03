@@ -134,15 +134,41 @@
     </section>
     <section class="contact section">
       <h2>Contact Me</h2>
-      <form>
-        <input type="text" value="Name" name="name" id="name" />
-        <input type="text" value="Email" name="email" id="email" />
-        <input type="text" value="Phone Number" name="number" id="number" />
-        <textarea id="message" name="message" rows="5" cols="40">
-Enter Message</textarea
-        >
-        <button class="submitBtn" type="submit">Submit</button>
-      </form>
+      <div class="formContainer">
+        <form>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            name="number"
+            id="number"
+            placeholder="Phone Number"
+            required
+          />
+          <textarea
+            id="message"
+            placeholder="Enter Message"
+            name="message"
+            rows="5"
+            cols="40"
+            required
+          ></textarea>
+          <button id="submitBtn" type="submit">Submit</button>
+        </form>
+        <div class="msgConfirmation"><h2>Thank you, message received</h2></div>
+      </div>
     </section>
     <footer class="footer">Copyright Cathy Dao</footer>
     <script src="./main.js"></script>

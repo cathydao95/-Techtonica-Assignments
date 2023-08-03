@@ -26,18 +26,44 @@ let projectImages = document.getElementsByClassName("projectImage");
 
 console.log(projectItems);
 
-function displayProjectInfo() {
-  console.log("test");
-  this.querySelector(".projectImage").style.opacity = ".25";
-  this.querySelector(".projectText").style.display = "flex";
+function displayProjectInfo(e) {
+  let hoveredElement = e.currentTarget;
+  hoveredElement.querySelector(".projectImage").style.opacity = ".25";
+  hoveredElement.querySelector(".projectText").style.display = "flex";
 }
 
-function hideProjectInfo() {
-  this.querySelector(".projectImage").style.opacity = "1";
-  this.querySelector(".projectText").style.display = "none";
+function hideProjectInfo(e) {
+  let hoveredElement = e.currentTarget;
+  hoveredElement.querySelector(".projectImage").style.opacity = "1";
+  hoveredElement.querySelector(".projectText").style.display = "none";
 }
 
 for (item of projectItems) {
   item.addEventListener("mouseover", displayProjectInfo);
   item.addEventListener("mouseleave", hideProjectInfo);
 }
+
+// submit button click
+let submitMsgBtn = document.getElementById("submitBtn");
+
+let form = document.getElementsByTagName("form");
+
+let confirmation = document.getElementsByClassName("msgConfirmation");
+
+function changeBtnColor() {
+  submitMsgBtn.style.backgroundColor = "grey";
+  submitMsgBtn.style.color = "white";
+}
+
+function revertBtnColor() {
+  submitMsgBtn.style.backgroundColor = "rgb(151, 197, 237)";
+}
+function sendMessage(e) {
+  e.preventDefault();
+  form[0].style.display = "none";
+  confirmation[0].style.display = "flex";
+}
+
+submitMsgBtn.addEventListener("mouseover", changeBtnColor);
+submitMsgBtn.addEventListener("mouseleave", revertBtnColor);
+submitMsgBtn.addEventListener("click", sendMessage);

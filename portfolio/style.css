@@ -1,6 +1,7 @@
 body {
   margin: 0px 25px;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(213, 241, 248);
 }
 
 .nav {
@@ -111,7 +112,15 @@ a {
 .contact {
   background-color: rgb(239, 239, 239);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
 }
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -127,11 +136,17 @@ textarea {
 textarea {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.submitBtn {
+#submitBtn {
   padding: 1rem;
   background-color: rgb(151, 197, 237);
   border: none;
+}
+/* how can I get the messagec confirmation to take full width of the form container */
+.msgConfirmation {
+  background-color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 /* footer */
@@ -186,7 +201,8 @@ footer {
     display: none;
   }
 
-  .btnContainer {
+  .btnContainer,
+  .downArrow {
     display: none;
   }
 
