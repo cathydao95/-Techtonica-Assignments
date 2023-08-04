@@ -65,10 +65,31 @@ function revertBtnColor() {
     submitMsgBtn.style.backgroundColor = "rgb(151, 197, 237)";
   }
 }
+
+function validateForm() {
+  let nameInput = document.getElementById("name").value;
+  let emailInput = document.getElementById("email").value;
+  let messageInput = document.getElementById("message").value;
+
+  if (
+    nameInput.trim() === "" ||
+    emailInput.trim() === "" ||
+    messageInput.trim() === ""
+  ) {
+    return false;
+  }
+
+  return true;
+}
+
 function sendMessage(e) {
   e.preventDefault();
-  form[0].style.display = "none";
-  confirmation[0].style.display = "flex";
+  if (validateForm()) {
+    form[0].style.display = "none";
+    confirmation[0].style.display = "flex";
+  } else {
+    alert("Name, Email, and Message are required fields.");
+  }
 }
 
 submitMsgBtn.addEventListener("mouseover", changeBtnColor);
@@ -102,5 +123,3 @@ function setDisplayMode() {
 }
 
 modeBtn.addEventListener("click", setDisplayMode);
-
-console.log(modeBtn);
