@@ -25,6 +25,8 @@ let navBar = document.querySelector(".nav");
 let modeBtn = document.querySelector("#modeBtn");
 let contact = document.querySelector("#contact");
 let footer = document.querySelector(".footer");
+let aboutBtn = document.querySelector(".aboutBtn");
+console.log(aboutBtn);
 
 function changePicture() {
   currentPictureIndex = (currentPictureIndex + 1) % imgSrcs.length;
@@ -118,6 +120,7 @@ function setDisplayMode() {
     footer.style.backgroundColor = "#525252";
     modeBtn.style.color = "white";
     modeBtn.style.backgroundColor = "#394867";
+    aboutBtn.style.backgroundColor = "#394867";
     darkModeOn = true;
   }
 }
