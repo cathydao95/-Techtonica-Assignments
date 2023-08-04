@@ -104,7 +104,6 @@ function clearForm() {
   personPhone.value = "";
 }
 
-function showConfirmation() {}
 function sendMessage(e) {
   e.preventDefault();
   if (validateForm()) {
