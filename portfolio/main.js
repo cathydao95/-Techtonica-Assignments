@@ -1,6 +1,6 @@
-// change profile pic
+// VARIABLES
+// picture variables
 let mainPicture = document.getElementById("mainPic");
-
 let imgSrcs = [
   "./images//girl.png",
   "./images//girl1.png",
@@ -8,26 +8,39 @@ let imgSrcs = [
   "./images//girl3.png",
   "./images//girl4.png",
 ];
-
 let currentPictureIndex = 0;
-let projectItems = document.getElementsByClassName("projectItem");
 
+// project info variables
+let projectItems = document.getElementsByClassName("projectItem");
 let projectImages = document.getElementsByClassName("projectImage");
 
-let submitMsgBtn = document.getElementById("submitBtn");
-
+// contact form variables
+let contactTitle = document.querySelector(".contactTitle");
 let form = document.getElementsByTagName("form");
+let submitMsgBtn = document.getElementById("submitBtn");
+let formValidation = document.querySelector(".formValidation");
+let confirmation = document.querySelector(".msgConfirmation");
+let personName = document.getElementById("name");
+let personEmail = document.getElementById("email");
+let personMessage = document.getElementById("message");
+let personPhone = document.getElementById("number");
+let personAddress = document.getElementById("address");
+let nameInput = "";
+let emailInput = "";
+let messageInput = "";
+let phoneInput = "";
+let addressInput = "";
 
-let confirmation = document.getElementsByClassName("msgConfirmation");
-
+// dark mode variables
 let darkModeOn = false;
 let navBar = document.querySelector(".nav");
 let modeBtn = document.querySelector("#modeBtn");
 let contact = document.querySelector("#contact");
 let footer = document.querySelector(".footer");
 let aboutBtn = document.querySelector(".aboutBtn");
-console.log(aboutBtn);
 
+// FUNCTIONS
+// change profile pic colors
 function changePicture() {
   currentPictureIndex = (currentPictureIndex + 1) % imgSrcs.length;
   mainPicture.src = imgSrcs[currentPictureIndex];
@@ -35,7 +48,7 @@ function changePicture() {
 
 mainPicture.addEventListener("click", changePicture);
 
-// add mouseover effect
+// add mouseover effect on project info
 
 function displayProjectInfo(e) {
   let hoveredElement = e.currentTarget;
@@ -69,10 +82,9 @@ function revertBtnColor() {
 }
 
 function validateForm() {
-  let nameInput = document.getElementById("name").value;
-  let emailInput = document.getElementById("email").value;
-  let messageInput = document.getElementById("message").value;
-
+  nameInput = personName.value;
+  emailInput = personEmail.value;
+  messageInput = personMessage.value;
   if (
     nameInput.trim() === "" ||
     emailInput.trim() === "" ||
@@ -84,13 +96,26 @@ function validateForm() {
   return true;
 }
 
+function clearForm() {
+  personName.value = "";
+  personEmail.value = "";
+  personMessage.value = "";
+  personAddress.value = "";
+  personPhone.value = "";
+}
+
+function showConfirmation() {}
 function sendMessage(e) {
   e.preventDefault();
   if (validateForm()) {
-    form[0].style.display = "none";
-    confirmation[0].style.display = "flex";
+    formValidation.style.display = "none";
+    confirmation.style.display = "block";
+    setTimeout(() => {
+      confirmation.style.display = "none";
+      clearForm();
+    }, 3000);
   } else {
-    alert("Name, Email, and Message are required fields.");
+    formValidation.style.display = "block";
   }
 }
 

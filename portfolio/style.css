@@ -165,14 +165,18 @@ textarea {
   padding: 1rem;
   border: none;
 }
-/* how can I get the messagec confirmation to take full width of the form container */
-.msgConfirmation {
-  background-color: white;
+
+.formValidation {
   display: none;
-  justify-content: center;
-  align-items: center;
+  color: red;
+  margin: 0 0 1rem;
 }
 
+.msgConfirmation {
+  display: none;
+  margin: 0 0 1rem;
+  color: rgb(18, 113, 197);
+}
 /* footer */
 footer {
   text-align: center;
