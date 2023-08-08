@@ -1,0 +1,276 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(241, 250, 252);
+}
+
+.nav,
+footer {
+  background-color: rgb(18, 113, 197);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.section {
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+button {
+  background-color: rgb(151, 197, 237);
+}
+
+/* nav */
+
+.logo {
+  flex-basis: 40%;
+}
+
+.logoLink {
+  font-size: 1.5rem;
+  color: white;
+  float: left;
+}
+.navLink {
+  color: white;
+}
+
+.navLink:hover {
+  color: rgb(39, 38, 38);
+}
+
+#modeBtn {
+  border: 2px solid black;
+  padding: 0.2rem 0.75rem;
+}
+
+/* main */
+
+.main {
+  padding-top: 4rem;
+}
+
+.attribute {
+  text-align: right;
+  font-size: 8px;
+}
+
+.btnContainer {
+  position: absolute;
+  top: 370px;
+  left: 20px;
+}
+
+.aboutBtn {
+  color: white;
+  padding: 0.65rem 1rem;
+  border: none;
+}
+
+.aboutBtn:hover {
+  background-color: grey;
+}
+
+.downArrow {
+  position: absolute;
+  top: 395px;
+  left: 88px;
+  font-size: 1rem;
+}
+
+.aboutBig {
+  display: none;
+}
+/* about */
+.aboutSmall {
+  text-align: center;
+}
+
+/* projects */
+.projectItem {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin: 25px 0;
+  background-color: white;
+}
+.projectItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.projectText {
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectTitle:hover {
+  color: blue;
+}
+
+/* form */
+.contact {
+  background-color: rgb(239, 239, 239);
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: none;
+}
+
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#submitBtn {
+  padding: 1rem;
+  border: none;
+}
+
+.formValidation {
+  display: none;
+  color: red;
+  margin: 0 0 1rem;
+}
+
+.msgConfirmation {
+  display: none;
+  margin: 0 0 1rem;
+  color: rgb(18, 113, 197);
+}
+/* footer */
+footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: white;
+}
+
+@media (min-width: 450px) {
+  .btnContainer {
+    position: absolute;
+    top: 370px;
+    left: 80px;
+  }
+
+  .downArrow {
+    position: absolute;
+    top: 395px;
+    left: 150px;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 600px) {
+  .main {
+    display: flex;
+  }
+
+  .aboutBig {
+    display: block;
+  }
+  .aboutSmall {
+    display: none;
+  }
+
+  .btnContainer,
+  .downArrow {
+    display: none;
+  }
+
+  .attribute {
+    text-align: center;
+  }
+
+  .projContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 2rem 12rem;
+    text-align: center;
+  }
+
+  .logoLink {
+    font-size: 2rem;
+  }
+
+  .navLink {
+    font-size: 1.25rem;
+  }
+
+  #modeBtn {
+    font-size: 1.05rem;
+  }
+
+  .main {
+    margin-top: 2rem;
+  }
+  .projContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .main {
+    justify-content: space-around;
+  }
+  .mainPicContainer {
+    flex-basis: 50%;
+  }
+
+  .aboutBig {
+    flex-basis: 50%;
+  }
+}
