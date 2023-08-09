@@ -25,4 +25,9 @@ function setPlayer1(e) {
 playerX.addEventListener("click", setPlayer1);
 playerO.addEventListener("click", setPlayer1);
 
-//
+// IMPLEMENT BOX CLICK AND FUNCTIONS
+
+//add event listener to each box
+for (box of boxes) {
+  box.addEventListener(click, setBox);
+}
