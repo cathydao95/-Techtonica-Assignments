@@ -1,0 +1,31 @@
+body {
+  text-align: center;
+}
+
+section {
+  margin: 1rem 0;
+}
+
+/* choose a character container */
+
+/* game */
+.gameContainer {
+  /* display: none; */
+  justify-content: center;
+}
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+}
+
+.box {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
