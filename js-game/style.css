@@ -10,7 +10,7 @@ section {
 
 /* game */
 .gameContainer {
-  /* display: none; */
+  display: none;
   justify-content: center;
 }
 #board {

@@ -9,6 +9,9 @@ let boxes = document.getElementsByClassName("box");
 let player1Turn = true;
 let player1 = "";
 let player2 = "";
+let gameIsDraw = false;
+let winner = "";
+let gameActive = true;
 
 const winCombos = [
   [0, 1, 2],
@@ -29,8 +32,8 @@ function setPlayer1(e) {
     player1 = "O";
     player2 = "X";
   }
-  // characters.style.display = "none";
-  // gameContainer.style.display = "flex";
+  characters.style.display = "none";
+  gameContainer.style.display = "flex";
 }
 
 playerX.addEventListener("click", setPlayer1);
@@ -47,16 +50,28 @@ function checkWinner(player) {
       boxes[b].textContent === player &&
       boxes[c].textContent === player
     ) {
-      console.log("winner");
+      winner = player;
+      gameActive = false;
     } else {
-      console.log("lol doesnt work");
+      return false;
     }
   }
 }
 
-function checkDraw() {}
+function checkDraw() {
+  for (let box of boxes) {
+    if (box.textContent !== "") {
+      return false;
+    }
+  }
+  gameIsDraw = true;
+  gameActive = false;
+}
 
 function markBox(e) {
+  if (!gameActive) {
+    return;
+  }
   console.log(player1Turn);
   if (player1Turn) {
     console.log("text");
@@ -65,12 +80,14 @@ function markBox(e) {
       player1Turn = !player1Turn;
     }
     checkWinner(player1);
+    checkDraw();
   } else {
     if (e.target.textContent === "") {
       e.target.textContent = player2;
       player1Turn = !player1Turn;
     }
     checkWinner(player2);
+    checkDraw();
   }
 }
 
