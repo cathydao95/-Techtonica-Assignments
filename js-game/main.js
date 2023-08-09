@@ -54,17 +54,23 @@ function checkWinner(player) {
   }
 }
 
+function checkDraw() {}
+
 function markBox(e) {
+  console.log(player1Turn);
   if (player1Turn) {
     console.log("text");
-    e.target.textContent = player1;
+    if (e.target.textContent === "") {
+      e.target.textContent = player1;
+      player1Turn = !player1Turn;
+    }
     checkWinner(player1);
-
-    player1Turn = false;
   } else {
-    e.target.textContent = player2;
+    if (e.target.textContent === "") {
+      e.target.textContent = player2;
+      player1Turn = !player1Turn;
+    }
     checkWinner(player2);
-    player1Turn = true;
   }
 }
 
