@@ -5,6 +5,9 @@ let gameContainer = document.querySelector(".gameContainer");
 let gameMessage = document.querySelector(".gameMessage");
 let player1Wins = document.querySelector(".player1Wins");
 let player2Wins = document.querySelector(".player2Wins");
+let playAgainContainer = document.querySelector(".btnContainer");
+let playAgainBtn = document.querySelector(".playBtn");
+let resetBtn = document.querySelector(".reset");
 // BOXES
 let boxes = document.getElementsByClassName("box");
 
@@ -30,6 +33,8 @@ const winCombos = [
 ];
 
 function setPlayer1(e) {
+  gameActive = true;
+  gameIsDraw = false;
   if (e.target.id === "xPlayer") {
     player1 = "X";
     player2 = "O";
@@ -60,7 +65,17 @@ function checkWinner(player) {
       boxes[c].style.backgroundColor = "green";
       gameMessage.textContent = `${player} Wins!`;
       winner = player;
+      if (player === player1) {
+        player1Score++;
+        player1Wins.textContent = `Player 1: ${player1Score}`;
+      } else {
+        player2Score++;
+        player2Wins.textContent = `Player 2: ${player2Score}`;
+      }
+
       gameActive = false;
+      playAgainContainer.style.display = "block";
+
       // return true;
     }
   }
@@ -76,6 +91,7 @@ function checkDraw() {
   gameMessage.textContent = "It's a Draw!";
   gameIsDraw = true;
   gameActive = false;
+  playAgainContainer.style.display = "block";
 }
 
 function markBox(e) {
@@ -100,7 +116,44 @@ function markBox(e) {
   }
 }
 
+// PLAY AGAIN
+
+function playAgain() {
+  for (let box of boxes) {
+    box.textContent = "";
+    box.style.backgroundColor = "white";
+  }
+  gameMessage.textContent = "";
+  player1Turn = true;
+  player1 = "";
+  player2 = "";
+  characters.style.display = "block";
+}
+
+// RESET GAME SCORE
+function resetGame() {
+  for (let box of boxes) {
+    box.textContent = "";
+    box.style.backgroundColor = "white";
+  }
+  gameMessage.textContent = "";
+  player1Turn = true;
+  player1 = "";
+  player2 = "";
+  player1Score = 0;
+  player2Score = 0;
+  player1Wins.textContent = `Player 1: ${player1Score}`;
+  player2Wins.textContent = `Player 2: ${player1Score}`;
+  characters.style.display = "block";
+}
+
 //add event listener to each box
 for (box of boxes) {
   box.addEventListener("click", markBox);
 }
+
+// reset game to play again
+playAgainBtn.addEventListener("click", playAgain);
+
+// reset score
+resetBtn.addEventListener("click", resetGame);
