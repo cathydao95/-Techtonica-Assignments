@@ -6,7 +6,7 @@ let gameContainer = document.querySelector(".gameContainer");
 let boxes = document.getElementsByClassName("box");
 
 // set player 1 or 2
-
+let player1Turn = true;
 let player1 = "";
 let player2 = "";
 
@@ -26,9 +26,18 @@ playerX.addEventListener("click", setPlayer1);
 playerO.addEventListener("click", setPlayer1);
 
 // IMPLEMENT BOX CLICK AND FUNCTIONS
-function markBox() {}
+function markBox(e) {
+  if (player1Turn) {
+    console.log("text");
+    e.target.textContent = player1;
+    player1Turn = false;
+  } else {
+    e.target.textContent = player2;
+    player1Turn = true;
+  }
+}
 
 //add event listener to each box
 for (box of boxes) {
-  box.addEventListener(click, markBox);
+  box.addEventListener("click", markBox);
 }
