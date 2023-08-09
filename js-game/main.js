@@ -2,6 +2,9 @@ let playerX = document.querySelector("#xPlayer");
 let playerO = document.querySelector("#oPlayer");
 let characters = document.querySelector(".characterContainer");
 let gameContainer = document.querySelector(".gameContainer");
+let gameMessage = document.querySelector(".gameMessage");
+let player1Wins = document.querySelector(".player1Wins");
+let player2Wins = document.querySelector(".player2Wins");
 // BOXES
 let boxes = document.getElementsByClassName("box");
 
@@ -12,6 +15,8 @@ let player2 = "";
 let gameIsDraw = false;
 let winner = "";
 let gameActive = true;
+let player1Score = 0;
+let player2Score = 0;
 
 const winCombos = [
   [0, 1, 2],
@@ -50,44 +55,48 @@ function checkWinner(player) {
       boxes[b].textContent === player &&
       boxes[c].textContent === player
     ) {
+      boxes[a].style.backgroundColor = "green";
+      boxes[b].style.backgroundColor = "green";
+      boxes[c].style.backgroundColor = "green";
+      gameMessage.textContent = `${player} Wins!`;
       winner = player;
       gameActive = false;
-    } else {
-      return false;
+      // return true;
     }
   }
+  return false;
 }
 
 function checkDraw() {
   for (let box of boxes) {
-    if (box.textContent !== "") {
+    if (box.textContent === "") {
       return false;
     }
   }
+  gameMessage.textContent = "It's a Draw!";
   gameIsDraw = true;
   gameActive = false;
 }
 
 function markBox(e) {
-  if (!gameActive) {
-    return;
-  }
-  console.log(player1Turn);
-  if (player1Turn) {
-    console.log("text");
-    if (e.target.textContent === "") {
-      e.target.textContent = player1;
-      player1Turn = !player1Turn;
+  if (gameActive) {
+    if (player1Turn) {
+      if (e.target.textContent === "") {
+        e.target.textContent = player1;
+        player1Turn = !player1Turn;
+        gameMessage.textContent = `${player2}'s Turn`;
+      }
+      checkWinner(player1);
+      checkDraw();
+    } else {
+      if (e.target.textContent === "") {
+        e.target.textContent = player2;
+        player1Turn = !player1Turn;
+        checkWinner(player2);
+        checkDraw();
+        gameMessage.textContent = `${player1}'s Turn`;
+      }
     }
-    checkWinner(player1);
-    checkDraw();
-  } else {
-    if (e.target.textContent === "") {
-      e.target.textContent = player2;
-      player1Turn = !player1Turn;
-    }
-    checkWinner(player2);
-    checkDraw();
   }
 }
 
