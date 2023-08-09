@@ -16,7 +16,6 @@ let player1Turn = true;
 let player1 = "";
 let player2 = "";
 let gameIsDraw = false;
-let winner = "";
 let gameActive = true;
 let player1Score = 0;
 let player2Score = 0;
@@ -38,9 +37,11 @@ function setPlayer1(e) {
   if (e.target.id === "xPlayer") {
     player1 = "X";
     player2 = "O";
+    gameMessage.textContent = "Player 1: X's Turn";
   } else {
     player1 = "O";
     player2 = "X";
+    gameMessage.textContent = "Player 1: O's Turn";
   }
   characters.style.display = "none";
   gameContainer.style.display = "flex";
@@ -63,12 +64,13 @@ function checkWinner(player) {
       boxes[a].style.backgroundColor = "green";
       boxes[b].style.backgroundColor = "green";
       boxes[c].style.backgroundColor = "green";
-      gameMessage.textContent = `${player} Wins!`;
-      winner = player;
+
       if (player === player1) {
+        gameMessage.textContent = `Player 1: ${player} Wins!`;
         player1Score++;
         player1Wins.textContent = `Player 1: ${player1Score}`;
       } else {
+        gameMessage.textContent = `Player 2 ${player} Wins!`;
         player2Score++;
         player2Wins.textContent = `Player 2: ${player2Score}`;
       }
@@ -100,7 +102,7 @@ function markBox(e) {
       if (e.target.textContent === "") {
         e.target.textContent = player1;
         player1Turn = !player1Turn;
-        gameMessage.textContent = `${player2}'s Turn`;
+        gameMessage.textContent = `Player 2: ${player2}'s Turn`;
       }
       checkWinner(player1);
       checkDraw();
@@ -108,10 +110,10 @@ function markBox(e) {
       if (e.target.textContent === "") {
         e.target.textContent = player2;
         player1Turn = !player1Turn;
-        checkWinner(player2);
-        checkDraw();
-        gameMessage.textContent = `${player1}'s Turn`;
+        gameMessage.textContent = `Player 1: ${player1}'s Turn`;
       }
+      checkWinner(player2);
+      checkDraw();
     }
   }
 }
@@ -123,6 +125,7 @@ function playAgain() {
     box.textContent = "";
     box.style.backgroundColor = "white";
   }
+  gameContainer.style.display = "none";
   gameMessage.textContent = "";
   player1Turn = true;
   player1 = "";
@@ -136,6 +139,7 @@ function resetGame() {
     box.textContent = "";
     box.style.backgroundColor = "white";
   }
+  gameContainer.style.display = "none";
   gameMessage.textContent = "";
   player1Turn = true;
   player1 = "";
