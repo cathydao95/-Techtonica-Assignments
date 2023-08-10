@@ -7,41 +7,53 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main><h1 class="title">Tic-Tac-Toe</h1></main>
+    <section class="options-container">
+      <h1>Choose a Game To Play!</h1>
+      <div class="game-options">
+        <div>Tic-Tac-Toe</div>
+        <div>Wordle</div>
+        <div>Sudoku</div>
+      </div>
+    </section>
+    <section><h2>Wordle</h2></section>
+    <!-- TIC TAC TOE GAME
+     -->
+    <section class="tic-tac-toe">
+      <h2 class="title">Tic-Tac-Toe</h2>
 
-    <section class="characterContainer">
-      <h2>Let's Play!</h2>
-      <h2>Player 1, Choose a Character:</h2>
-      <div class="charBtnContainer">
-        <button id="xPlayer" class="btn">X</button>
-        <button id="oPlayer" class="btn">O</button>
+      <section class="characterContainer">
+        <h2>Player 1, Choose a Character:</h2>
+        <div class="charBtnContainer">
+          <button id="xPlayer" class="btn">X</button>
+          <button id="oPlayer" class="btn">O</button>
+        </div>
+      </section>
+      <section class="gameContainer">
+        <h2 class="gameMessage"></h2>
+        <div id="board">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </section>
+      <section class="score">
+        <div>
+          <h3>Score Board:</h3>
+          <h4 class="player1Wins">Player 1: 0</h4>
+          <h4 class="player2Wins">Player 2: 0</h4>
+        </div>
+      </section>
+      <div class="btnContainer">
+        <button class="playBtn">Play Again</button
+        ><button class="reset">Reset Score</button>
       </div>
     </section>
-    <section class="gameContainer">
-      <h2 class="gameMessage"></h2>
-      <div id="board">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-    </section>
-    <section class="score">
-      <div>
-        <h3>Score Board:</h3>
-        <h4 class="player1Wins">Player 1: 0</h4>
-        <h4 class="player2Wins">Player 2: 0</h4>
-      </div>
-    </section>
-    <div class="btnContainer">
-      <button class="playBtn">Play Again</button
-      ><button class="reset">Reset Score</button>
-    </div>
     <script src="./main.js"></script>
   </body>
 </html>
