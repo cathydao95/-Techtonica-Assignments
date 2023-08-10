@@ -1,3 +1,18 @@
+// GAME OPTIONS CONTAINER
+let optionsContainer = document.querySelector(".options-container");
+let gameOptions = document.querySelectorAll(".game");
+console.log(gameOptions);
+
+// GAME OPTIONS FUNCTIONS
+// function setGame(e) {
+//   console.log(e.targets);
+// }
+
+// gameOptions.forEach((game) => {
+//   game.addEventListener("click", setGame);
+// });
+
+// TIC TAC TOE
 let playerX = document.querySelector("#xPlayer");
 let playerO = document.querySelector("#oPlayer");
 let characters = document.querySelector(".characterContainer");

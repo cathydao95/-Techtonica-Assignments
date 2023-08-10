@@ -1,14 +1,18 @@
-body {
+/* body {
   text-align: center;
+} */
+
+* {
+  box-sizing: border-box;
 }
 
-section {
-  margin: 1rem 0;
+/* TIC TAC TOE */
+.tic-tac-toe {
+  background-color: blue;
+  display: none;
 }
-
 /* choose a character container */
 .characterContainer {
-  margin: 4rem 0;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -37,7 +41,7 @@ section {
 }
 
 .box {
-  border: 2px solid blue;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;

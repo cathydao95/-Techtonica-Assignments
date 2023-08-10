@@ -1,0 +1,19 @@
+/* WORDLE */
+
+.wordle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  height: 50px;
+  width: 300px;
+}
+.letter {
+  border: 2px solid grey;
+  width: 100%;
+  height: 100%;
+}
