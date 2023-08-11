@@ -14,7 +14,7 @@ games.forEach((game) => {
 });
 
 // return to game selections
-
+// ** NOTE: NEED TO CONTINUE WORKING ON RETURN BUTTON TO MAKE SURE CLEAR GAMES
 function returnToMain(e) {
   // get parent node of the return button
   let game = e.target.parentNode;
