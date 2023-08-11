@@ -3,51 +3,66 @@
 let rows = document.querySelectorAll(".row");
 // turn rows into an array using spread and map through each row to create an array of letters array
 
-// get letters into an array of arrays
+// get an array of arrays with each group of div "letter"
 let guessedLettersArray = [...rows].map((row) => {
   return row.querySelectorAll(".letter");
 });
 
 let wordleResult = document.querySelector(".wordle-result");
 let correctWord = document.querySelector(".correct-Word");
-
 let wordleActive = true;
-let word = "paate";
+
+// create an array of words to randomly choose word
+let randomWords = [
+  "toast",
+  "loved",
+  "movie",
+  "happy",
+  "funky",
+  "plate",
+  "trees",
+];
+
+let randomNumber = Math.floor(Math.random() * randomWords.length);
+let word = randomWords[randomNumber];
 let answer = word.toUpperCase().split("");
 
 // set current row and index guess to 0
 let currentRowIndex = 0;
 let currentIndexGuess = 0;
 
+// function to run when "enter" is pressed
 function checkGuess() {
-  let guessedLetters = guessedLettersArray[currentRowIndex];
   allCorrect = true;
+
+  // set guessed word
+  let guessedWord = guessedLettersArray[currentRowIndex];
 
   // check how many of each answer letter is present
   let answerCounts = {};
-
   answer.forEach((letter) => {
     answerCounts[letter] = (answerCounts[letter] || 0) + 1;
   });
 
-  console.log(answerCounts);
-
   // check if word matches word
   for (let i = 0; i < answer.length; i++) {
-    guessedLetters[i].style.color = "white";
-    if (guessedLetters[i].textContent.toUpperCase() === answer[i]) {
-      guessedLetters[i].style.backgroundColor = "rgb(90,161,93)";
-      answerCounts[guessedLetters[i].textContent]--;
+    guessedWord[i].style.color = "white";
+    // check if letter at index in guessed word is same as letter at index in answer
+    if (guessedWord[i].textContent.toUpperCase() === answer[i]) {
+      guessedWord[i].style.backgroundColor = "rgb(90,161,93)";
+      // remove 1 from answerCounts
+      answerCounts[guessedWord[i].textContent]--;
     } else if (
-      answer.includes(guessedLetters[i].textContent.toUpperCase()) &&
-      answerCounts[guessedLetters[i].textContent] > 0
+      // check if answer includes letter and if letter has not been accounted for in answerCounts
+      // NOTE *** NEED TO FIX THIS BECAUSE SOME TESTS FAILED. FOR EX. WHEN WORD IS "TIMES", AND USER GUESSES "IIMES", THE FIRST I WILL TURN YELLOW BECAUSE "I" IS INCLUDED
+      answer.includes(guessedWord[i].textContent.toUpperCase()) &&
+      answerCounts[guessedWord[i].textContent] > 0
     ) {
       allCorrect = false;
-      guessedLetters[i].style.backgroundColor = "rgb(195,172,84";
-      answerCounts[guessedLetters[i].textContent]--;
-      console.log("LOOK HERE", i, answerCounts[guessedLetters[i].textContent]);
+      guessedWord[i].style.backgroundColor = "rgb(195,172,84";
+      answerCounts[guessedWord[i].textContent]--;
     } else {
-      guessedLetters[i].style.backgroundColor = "rgb(108,113,105)";
+      guessedWord[i].style.backgroundColor = "rgb(108,113,105)";
       allCorrect = false;
     }
   }
@@ -69,7 +84,7 @@ function handleKeyPress(e) {
   if (wordleActive) {
     // use e.key to find out what key is being pressed
     let key = e.key;
-    console.log(key);
+
     // if key is backspace and currentIndex isnt 0, clear the index before current and decrease currentIndexGuess
     if (key === "Backspace" && currentIndexGuess !== 0) {
       guessedLettersArray[currentRowIndex][currentIndexGuess - 1].textContent =
