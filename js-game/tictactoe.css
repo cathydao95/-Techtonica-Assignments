@@ -24,7 +24,7 @@
   padding: 2rem;
 }
 
-.btn {
+.charBtn {
   margin: 1rem;
   font-size: 2.5rem;
   padding: 2rem;
@@ -65,13 +65,4 @@
 .btnContainer {
   display: flex;
   gap: 1rem;
-}
-
-.btnContainer * {
-  padding: 0.5rem 1rem;
-  border: none;
-}
-
-.btnContainer *:hover {
-  background-color: rgb(127, 153, 255);
 }

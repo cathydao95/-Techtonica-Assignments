@@ -25,3 +25,12 @@
 .game:hover {
   background-color: bisque;
 }
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.btn:hover {
+  background-color: rgb(127, 153, 255);
+}
