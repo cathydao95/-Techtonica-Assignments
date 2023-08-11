@@ -33,3 +33,12 @@
 .wordle-over {
   text-align: center;
 }
+
+.wordle-over * {
+  padding: 1rem 0;
+}
+
+.wordle-btn {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+}

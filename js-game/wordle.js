@@ -1,15 +1,4 @@
-// WORDLE
-
-let rows = document.querySelectorAll(".row");
-// turn rows into an array using spread and map through each row to create an array of letters array
-
-// get an array of arrays with each group of div "letter"
-let guessedLettersArray = [...rows].map((row) => {
-  return row.querySelectorAll(".letter");
-});
-
-let wordleResult = document.querySelector(".wordle-result");
-let correctWord = document.querySelector(".correct-Word");
+// set game active
 let wordleActive = true;
 
 // create an array of words to randomly choose word
@@ -24,15 +13,34 @@ let randomWords = [
 ];
 
 let randomNumber = Math.floor(Math.random() * randomWords.length);
-let word = randomWords[randomNumber];
-let answer = word.toUpperCase().split("");
+let word;
+let answer;
 
+function generateWord() {
+  let randomNumber = Math.floor(Math.random() * randomWords.length);
+  word = randomWords[randomNumber];
+  answer = word.toUpperCase().split("");
+}
 // set current row and index guess to 0
 let currentRowIndex = 0;
 let currentIndexGuess = 0;
 
+let rows = document.querySelectorAll(".row");
+let wordBoxes = document.querySelectorAll(".letter");
+// turn rows into an array using spread and map through each row to create an array of letters array
+
+// get an array of arrays with each group of div "letter"
+let guessedLettersArray = [...rows].map((row) => {
+  return row.querySelectorAll(".letter");
+});
+
+let wordleResult = document.querySelector(".wordle-result");
+let correctWord = document.querySelector(".correct-Word");
+let playWordleBtn = document.querySelector(".wordle-btn");
+
 // function to run when "enter" is pressed
 function checkGuess() {
+  console.log("working 1 ");
   allCorrect = true;
 
   // set guessed word
@@ -113,4 +121,26 @@ function handleKeyPress(e) {
   }
 }
 
+function resetGame() {
+  currentRowIndex = 0;
+  currentIndexGuess = 0;
+  wordBoxes.forEach((box) => {
+    box.textContent = "";
+    box.style.backgroundColor = "";
+  });
+  wordleResult.textContent = "";
+  correctWord.textContent = "";
+  wordleActive = true;
+  generateWord();
+  console.log(answer);
+
+  // remove focus from play again button so that enter doesnt trigger it
+  playWordleBtn.blur();
+}
+
 document.addEventListener("keydown", handleKeyPress);
+playWordleBtn.addEventListener("click", resetGame);
+
+generateWord();
+
+console.log(answer);
