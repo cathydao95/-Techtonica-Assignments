@@ -1,0 +1,68 @@
+/* TIC TAC TOE */
+#tic-tac-toe {
+  background-color: rgb(158, 183, 195);
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.tic-tac-toe-title {
+  font-size: 2rem;
+}
+
+/* choose a character container */
+.characterContainer {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.charBtnContainer {
+  padding: 2rem;
+}
+
+.charBtn {
+  margin: 1rem;
+  font-size: 2.5rem;
+  padding: 2rem;
+  border: none;
+}
+
+.btn:hover {
+  background-color: rgb(127, 153, 255);
+}
+/* game */
+.gameMessage {
+  padding-bottom: 2rem;
+}
+.gameContainer {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 2px solid black;
+  width: 300px;
+  height: 300px;
+}
+
+.box {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+/* play again */
+.btnContainer {
+  display: flex;
+  gap: 1rem;
+}

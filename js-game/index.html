@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="tictactoe.css" />
+    <link rel="stylesheet" href="wordle.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <section class="options-container">
+      <h1 class="title">Choose a Game To Play!</h1>
+      <div class="game-options">
+        <div class="game tic-tac-toe">Tic-Tac-Toe</div>
+        <div class="game wordle">Wordle</div>
+        <div class="game">Sudoku</div>
+      </div>
+    </section>
+    <!-- WORDLE GAME -->
+    <section id="wordle">
+      <h2>Wordle</h2>
+      <div class="wordle-game">
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+        <div class="row">
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+          <div class="letter"></div>
+        </div>
+      </div>
+      <div class="wordle-over">
+        <h3 class="wordle-result"></h3>
+        <p class="correct-Word"></p>
+        <button class="wordle-btn btn">Play Again</button>
+      </div>
+      <button class="returnBtn btn">Return</button>
+    </section>
+    <!-- TIC TAC TOE GAME
+     -->
+    <section id="tic-tac-toe">
+      <h2 class="tic-tac-toe-title">Tic-Tac-Toe</h2>
+
+      <section class="characterContainer">
+        <h2>Player 1, Choose a Character:</h2>
+        <div class="charBtnContainer">
+          <button id="xPlayer" class="charBtn">X</button>
+          <button id="oPlayer" class="charBtn">O</button>
+        </div>
+      </section>
+      <section class="gameContainer">
+        <h2 class="gameMessage"></h2>
+        <div id="board">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </section>
+      <section class="score">
+        <div>
+          <h3>Score Board:</h3>
+          <h4 class="player1Wins">Player 1: 0</h4>
+          <h4 class="player2Wins">Player 2: 0</h4>
+        </div>
+      </section>
+      <div class="btnContainer">
+        <button class="playBtn btn">Play Again</button
+        ><button class="reset btn">Reset Score</button>
+      </div>
+      <button class="returnBtn btn">Return</button>
+    </section>
+    <script src="./main.js"></script>
+    <script src="./tictactoe.js"></script>
+    <script src="./wordle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.options-container {
+  height: 100vh;
+  text-align: center;
+  background-color: rgb(186, 220, 220);
+}
+
+.title {
+  font-size: 3rem;
+  padding: 2rem 0;
+}
+
+.game {
+  font-size: 2rem;
+  margin: 2rem;
+  padding: 1.5rem;
+  background-color: aqua;
+}
+
+.game:hover {
+  background-color: bisque;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+.btn:hover {
+  background-color: rgb(127, 153, 255);
+}
