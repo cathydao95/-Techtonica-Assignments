@@ -1,9 +1,10 @@
 /* WORDLE */
 
-.wordle {
+#wordle {
+  display: none;
   background-color: rgb(143, 180, 134);
   padding: 1rem 0;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
